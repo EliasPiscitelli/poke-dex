@@ -21,16 +21,17 @@ function Modal(props) {
   return (
     <>
       <div className={`custom-modal ${props.show ? "open" : ""}`} tabIndex="-1">
+      <div className="modal-footer">
+            <button type="button" id="imgButton" onClick={hide}>
+              <img  src={close} alt="cerrar"/>
+            </button>
+          </div>
         <div className="modal-overlay"></div>
         <div className="modal-content">
           <div className="modal-body custom-modal-body">
             {show && props.children}
           </div>
-          <div className="modal-footer">
-            <button type="button" className="btn btn-link" onClick={hide}>
-              Cerrar
-            </button>
-          </div>
+          
         </div>
       </div>
     </>

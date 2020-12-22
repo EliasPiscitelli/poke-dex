@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+/*Style*/
 import "../index.css";
+import search from '../assets/img/search.png';
+import arrowRight from '../assets/img/arrowRight.png';
+import arrowLeft from '../assets/img/arrowLeft.png';
 // Components
 import PokeCard from "./PokeCard";
 import Modal from "./Modal";
@@ -73,28 +77,33 @@ function Home() {
   return (
     <>
     {loading ? <Loading/> : 
-      <div>
+      <div id="home">
       <section>
         <input
           placeholder="¿Qué Pokemon Buscas?"
           type="text"
           onChange={handleInput}
         />
-        <button onClick={searchPokemon}>Buscar</button>
+        <button onClick={searchPokemon}><img src={search}/></button>
       </section>
+      <section id="pokeList">
       {pokeList.length > 0 &&
-        pokeList.map((pokemon) => {
+        pokeList.map((pokemon, i) => {
           return (
-            <PokeCard pokemon={pokemon} openInfoPokemon={handleModalShow} />
+            <PokeCard key={i} pokemon={pokemon} openInfoPokemon={handleModalShow} />
           );
         })}
+        </section>
+        <div id="buttonPage">
         {maxIdPoke > 1 && 
-        <button onClick={() => getMorePokemons('before')}>Anterior</button>
+        <button className="buttonArrow" onClick={() => getMorePokemons('before')}><img src={arrowLeft}/></button>
         }
-        <button onClick={() => getMorePokemons('after')}>Siguiente</button>
+        <button className="buttonArrow" onClick={() => getMorePokemons('after')}><img src={arrowRight}/></button>
+        </div>
       <Modal show={showModal} onClose={handleModalShow} title={"Pokemon"}>
         <PokeCardInfo pokemon={pokeSelected} />
       </Modal>
+      
     </div>
     }
     </>

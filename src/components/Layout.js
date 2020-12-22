@@ -1,10 +1,13 @@
 import react from "react";
+import Logo from '../assets/img/pokedexLogo.png';
 
 function Layout(props) {
   return (
     <>
       <div className="Layout">
-        <h1>POKEDEX</h1>
+        <div id="logo">
+        <img src={Logo} alt="POKEDEX"/>
+        </div>
         {props.children}
       </div>
     </>

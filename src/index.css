@@ -11,3 +11,217 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+#logo img{
+  width: 40%;
+}
+#home{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content:center;
+  align-items: center;
+}
+#home section{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#home section input{
+  width: 40%;
+  height: 2rem;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  /*shadow*/
+  box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+  -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+  -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+}
+#home section button{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#home section button img{
+  width: 25%;
+  transition: 0.5s;
+}
+#home section button img:hover{
+  transform: scale(1.2);
+}
+  #pokeList{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items: center;
+  }
+  .cardInfo{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 400px!important;
+    background-color: red;
+    padding:1rem;
+    line-height : 1px !important;
+    border-radius: 2rem;
+    color:#FFD700;
+    /*shadow*/
+    box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+    -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+    -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+   
+    box-shadow: -7px -9px 20px 15px rgba(0,0,0,0.75) inset;
+    -webkit-box-shadow: -7px -9px 20px 15px rgba(0,0,0,0.75) inset;
+    -moz-box-shadow: -7px -9px 20px 15px rgba(0,0,0,0.75) inset;
+  }
+  .cardInfo .title{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 60%;
+    padding: 0.5rem;
+    text-shadow: 4px 3px 4px rgba(0,0,0,0.6);
+  }
+  .cardInfo .title article{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 0%;
+  }
+  .cardInfo .title article img{
+    width: 100%;
+    margin-top: 0%;
+  }
+  .cardInfo .title p{
+    margin-top: 0%;
+    text-shadow: 4px 3px 4px rgba(0,0,0,0.9);
+  }
+  .cardInfo .data{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    text-shadow: 4px 3px 4px rgba(0,0,0,0.6);
+  }
+  .cardInfo .data h4{
+    margin: 1rem;
+  }
+  .cardInfo .data p{
+    margin-right: 1rem;
+  }
+
+    .card-container{
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content:center;
+      align-items: center;
+      width: 25%;
+      border: 4px solid black;
+      border-radius: 0.8rem;
+      margin: 0.5rem;
+      margin-right: 1rem;
+
+      /*shadow*/
+      box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+      -webkit-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+      -moz-box-shadow: 6px 6px 5px 0px rgba(0,0,0,0.76);
+    }
+    .card-container .pokedex{
+      display: flex;
+      justify-content:center;
+    }
+    .card-container .pokedex img{
+      width: 103%;
+      margin-top: -2%;
+    }
+    .card-container article{
+      width: 100%;
+    }
+    .card-container article img{
+      width: 100%;
+      transition: 0.5s;
+    }
+    .card-container article img:hover{
+      transform: scale(1.3);
+    }
+    .card-container h3{
+      margin: 0%;
+    }
+    .card-container p{
+      margin: 0%;
+      font-weight: 700;
+      opacity: 0.6;
+    }
+
+    .card-container .pokeball{
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+   
+    .card-container .pokeball img{
+      padding: 0%;
+      width: 30%;
+      transition: 0.5s;
+      border-radius: 3rem;
+    }
+    .card-container .pokeball img:hover{
+      transform: scale(1.2);
+      box-shadow: 5px 5px  rgba(0,0,0,0.6);
+      -moz-box-shadow: 5px 5px  rgba(0,0,0,0.6);
+      -webkit-box-shadow: 5px 5px  rgba(0,0,0,0.6);
+      -o-box-shadow: 5px 5px  rgba(0,0,0,0.6);
+      border-radius:100px;
+    
+    }
+
+#buttonPage{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem;
+  margin-bottom: 4rem;
+  
+}
+
+#buttonPage .buttonArrow{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#buttonPage .buttonArrow img{
+  width: 15% ;
+  transition: 0.5s;
+}
+#buttonPage .buttonArrow img:hover{
+  transform: scale(1.3);
+}
+
+#imgButton{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  padding-right: 2rem;
+}
+#imgButton img{
+  width: 45%;
+}

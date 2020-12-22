@@ -1,30 +1,27 @@
 import React, { useState } from "react";
+import '../index.css';
 
 function PokeCard({ pokemon }) {
   return (
     <>
-      <div
-        className="card-container"
-        style={{
-          border: "3px solid black",
-          display: "flex",
-          flexFlow: "column nowrap",
-          width: "25%",
-        }}
-      >
-        <h3>{pokemon.name}</h3>
+      <div className="cardInfo">
+        <div className="title">
+        <h3>{pokemon.name.toUpperCase()}</h3>
         <article>
           <img src={pokemon.image} alt="pokemon-image-card" />
         </article>
         <p>#0{pokemon.id}</p>
-        <h6>Height</h6>
+        </div>
+        <div className="data">
+        <h4>Height</h4>
         <p>{pokemon.height}</p>
-        <h6>Weight</h6>
+        <h4>Weight</h4>
         <p>{pokemon.weight}</p>
-        <h6>Type</h6>
+        <h4>Type</h4>
         <p>{pokemon.type.toString()}</p>
-        <h6>Abilities</h6>
+        <h4>Abilities</h4>
         <p>{pokemon.abilities.toString()}</p>
+        </div>
       </div>
     </>
   );
