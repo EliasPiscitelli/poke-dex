@@ -1,0 +1,65 @@
+@import './variable.scss';
+
+.custom-modal {
+  position: fixed;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  z-index: 2010;
+  transition: all 200ms ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: left !important;
+}
+
+.modal {
+  &-content {
+    background: #ffffff !important;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px !important;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 200ms ease;
+  }
+
+  &-header {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 35px 32px;
+    position: relative;
+    display: block !important;
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 !important;
+      @include svgColor($blackColor, none);
+    }
+  }
+
+  &-footer {
+    justify-content: space-between !important;
+  }
+}
+
+.custom-modal.open {
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  visibility: visible;
+  .modal-content {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.close:not(:disabled):not(.disabled):hover,
+.close:not(:disabled):not(.disabled):focus {
+  @include focusStateReset;
+}
+
+.container-scroll_modal {
+  height: 400px;
+}

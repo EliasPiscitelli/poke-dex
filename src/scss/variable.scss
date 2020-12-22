@@ -1,0 +1,228 @@
+// Media Queries Mixins
+@import './media-queries.scss';
+
+//App variables
+$primaryColor: #009600;
+$backgroundColor: #ebedee;
+$labelColor: #6e6e6e;
+$backgroundList: #ebedee;
+$backgroundBody: #f3f3f4;
+$backgroundCard: #ffffff;
+$lightButton: #f0f0f0;
+$orangeColor: #fd9644;
+$redColor: rgb(227, 27, 35);
+$pinkColor: rgb(242, 166, 166);
+$greenColor: rgb(140, 200, 60);
+$blueColor: rgb(0, 125, 195);
+$lightBlueColor: rgb(121, 194, 236);
+$darkBlueColor: rgb(0, 43, 92);
+$yellowColor: #f1c40f;
+$blackColor: #343a40;
+$errorColor: #cd201f;
+$sidebarColor: #f2faf2;
+$sidebarBorderColor: rgba(0, 150, 0, 0.25);
+$borderColor: #dee2e6;
+$boxShadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$lightGrayColor: #f8f9fa;
+$tableAcentColor: rgba(196, 196, 196, 0.1);
+$tableHoverBg: rgba(196, 196, 196, 0.1);
+
+$inputBorderColor: rgba(0, 0, 0, 0.2);
+$inputBorderColorHover: rgba(0, 0, 0, 0.25);
+$inputBorderRadius: 4px;
+
+$headerHeight: 60px;
+$headerHeightSm: 42px;
+
+/* Mixin for fixed header */
+
+@mixin headerFixed {
+  background-color: $backgroundCard;
+  padding: 10px 0;
+  position: relative;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  &:after {
+    content: '';
+    background-color: $backgroundCard;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    right: 0;
+    height: 60px;
+  }
+  @include respond-above(md) {
+    padding: 40px 0 0;
+    min-height: 140px;
+  }
+}
+
+/* Mixin for content area below fixed header */
+
+@mixin contentFixed {
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/* Mixin for remove button styles */
+
+@mixin buttonUnstyled {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  outline: none !important;
+}
+
+/* Mixin for primary buttons */
+@mixin buttonPrimary {
+  background-color: $primaryColor;
+  color: $backgroundCard;
+  border-color: $primaryColor;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 8px 15px;
+  font-family: 'univers';
+  &:hover {
+    border-color: $primaryColor;
+  }
+}
+
+/* Mixin for change the fill color */
+
+@mixin svgColor($fill, $stroke: false) {
+  svg {
+    path {
+      fill: $fill;
+      @if $stroke {
+        stroke: $stroke;
+      }
+    }
+    polygon {
+      fill: $fill;
+      @if $stroke {
+        stroke: $stroke;
+      }
+    }
+  }
+}
+
+/* Mixin for link transitions */
+
+@mixin linkTransition {
+  transition: all 0.2s ease;
+}
+
+/* Mixin for small titles*/
+
+@mixin titleSmall {
+  color: $primaryColor;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: 'univers';
+  font-weight: bold;
+  button {
+    @include buttonUnstyled;
+    margin-left: 10px;
+  }
+  .icon {
+    margin-right: 7px;
+  }
+  &--gray {
+    color: $labelColor;
+  }
+  &--red {
+    color: $redColor;
+  }
+}
+
+/* Mixin for input boxes */
+@mixin inputBox {
+  border-radius: $inputBorderRadius;
+  border: solid 1px $inputBorderColor;
+  @include linkTransition;
+  &:hover {
+    border: solid 1px $primaryColor;
+    box-shadow: none;
+  }
+}
+
+/* Mixin for reseting focus state */
+
+@mixin focusStateReset {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Mixin for card layout */
+
+@mixin cardLayout {
+  background: $backgroundCard;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+
+/* Mixin for ellipsis */
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+@mixin vhCentered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+@mixin vCentered {
+  position: absolute;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+
+
+@mixin clearButton {
+  @include svgColor($backgroundCard, $backgroundCard);
+
+  svg {
+    padding: 2px;
+    width: 12px;
+    background-color: lighten($labelColor, 30%);
+    height: 12px;
+    border-radius: 10px;
+    @include vhCentered;
+  }
+}
+
+@mixin searchInput {
+  border: none;
+  border-radius: 0;
+  height: auto;
+  font-family: 'Calibri';
+  font-size: 0.75rem;
+  color: $labelColor;
+  padding: 5px 25px 5px 0;
+  transition: 0.2s ease;
+  background-color: transparent;
+  border-bottom: solid 1px rgba(110, 110, 110, 0.2);
+  width: 100%;
+  &:focus {
+    outline: 0;
+    border-color: rgba(110, 110, 110, 0.4);
+    box-shadow: none;
+  }
+}
