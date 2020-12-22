@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 /*Style*/
 import "../index.css";
 import search from '../assets/img/search.png';
@@ -39,9 +38,10 @@ function Home() {
 
   const searchPokemon = async () => {
     setLoading(true);
-    await pokemonService.getPokemon(pokeName).then((res) => {
+    await pokemonService.getPokemon(pokeName.toLowerCase()).then((res) => {
       if (res.status) {
         setPokeSelected(res.data);
+        debugger
         setShowModal(true);
       } else {
         alert("No se consiguio Pokemon");
