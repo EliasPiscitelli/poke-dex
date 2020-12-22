@@ -143,9 +143,10 @@ code {
     .card-container .pokedex{
       display: flex;
       justify-content:center;
+      width: 100%;
     }
     .card-container .pokedex img{
-      width: 103%;
+      width: 105%;
       margin-top: -2%;
     }
     .card-container article{
@@ -226,6 +227,7 @@ code {
 #imgButton img{
   width: 45%;
 }
+
 
 
 @media (max-width: 640px) {
